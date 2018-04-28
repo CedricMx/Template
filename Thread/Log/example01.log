@@ -1,0 +1,15 @@
+2018-04-17 16:17:55 Mike DEBUG Calling doubler
+2018-04-17 16:17:55 George DEBUG Calling doubler
+2018-04-17 16:17:55 Mike DEBUG doubler function executing
+2018-04-17 16:17:55 Wanda DEBUG Calling doubler
+2018-04-17 16:17:55 George DEBUG doubler function executing
+2018-04-17 16:17:55 Mike DEBUG doubler function ended with: 0
+2018-04-17 16:17:55 Wanda DEBUG doubler function executing
+2018-04-17 16:17:55 Dingbat DEBUG Calling doubler
+2018-04-17 16:17:55 George DEBUG doubler function ended with: 2
+2018-04-17 16:17:55 Nina DEBUG Calling doubler
+2018-04-17 16:17:55 Wanda DEBUG doubler function ended with: 4
+2018-04-17 16:17:55 Dingbat DEBUG doubler function executing
+2018-04-17 16:17:55 Nina DEBUG doubler function executing
+2018-04-17 16:17:55 Dingbat DEBUG doubler function ended with: 6
+2018-04-17 16:17:55 Nina DEBUG doubler function ended with: 8

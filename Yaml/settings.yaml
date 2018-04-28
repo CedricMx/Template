@@ -1,0 +1,14 @@
+# use space(don't use tab for indent)
+
+settings:
+
+  oauth2_email: fauzi@soovii.com
+  oauth2_password: 666666
+
+  # asset_library database
+  # address: 127.0.0.1
+  address: 192.168.8.18
+  port: 3306
+  user: plugin
+  password: plugin
+  database: asset_library
