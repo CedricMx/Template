@@ -87,10 +87,11 @@ def pdf_watermark_by_text(input_path, watermark_text, output_path):
 
 
 if __name__ == '__main__':
-    input_path = r'D:\temp\Test_watermark\pdftest.pdf'
-    watermark_text = u'To jianwei'
-    output_path = r'D:\temp\Test_watermark\result.pdf'
-    print (pdf_watermark_by_text(input_path, watermark_text, output_path))
+    # input_path = r'D:\temp\Test_watermark\pdftest.pdf'
+    # watermark_text = u'To jianwei'
+    # output_path = r'D:\temp\Test_watermark\result.pdf'
+    # print (pdf_watermark_by_text(input_path, watermark_text, output_path))
+    create_watermark(u'谭家成')
 
     # create_watermark(u'中文测试')
     # from reportlab.pdfbase import pdfmetrics
