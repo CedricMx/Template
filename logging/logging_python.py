@@ -15,38 +15,52 @@ ERROR: 出现了更严重的问题，软件的部分功能已经无法正常工�
 CRITICAL: 出现了更严重的问题，软件的部分功能已经无法正常工作
 '''
 
-def logging_function():
-    filepath = os.path.dirname(__file__)
-    logpath = os.path.join(filepath, 'Log', 'example.log')
+class Logger:  
+    def __init__(self, logName, logFile):  
+        self._logger = logging.getLogger(logName)  
+        self._logger.setLevel(logging.DEBUG)
+  
+        log_dir = "./Log"  
+        if os.path.exists(log_dir) == False:  
+            os.mkdir(log_dir)  
+  
+        log_filename = log_dir+'/'+logFile  
+  
+        fh = logging.FileHandler(log_filename)  
+        # fh.setLevel(logging.DEBUG)
 
-    # Setting log format
-    logging.basicConfig(
-        filename=logpath,
-        level=logging.DEBUG,   # 根据配置的级别决定哪些被写进log里
-        # filemode='w',  # 覆盖之前记录, 记录不叠加
-        format='%(asctime)s %(levelname)s %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
-    )
+        ch = logging.StreamHandler()
+        ch.setLevel(logging.ERROR)
+        
+        formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s", '%Y-%m-%d %H:%M:%S') 
+        
+        ch.setFormatter(formatter)
+        fh.setFormatter(formatter) 
+        
+        self._logger.addHandler(ch)
+        self._logger.addHandler(fh)
 
-    return logging
+    def debug(self, msg):  
+        if self._logger is not None: 
+         
+            self._logger.debug(msg)
+    
+    def info(self, msg):  
+        if self._logger is not None: 
+            print('y')
+            self._logger.info(msg)  
+
+    def error(self, msg):  
+        if self._logger is not None: 
+         
+            self._logger.error(msg) 
+
 
 if __name__ == '__main__':
-    log = logging_function()
-    log.info('fuckkkkkkkkkkkkkkkkk')
+    a = Logger('test', 'test.log')
+    # b = Logger('test01', 'test01.log')
+    a.info('bbbbbbb')
+    a.error('bbbbbbb')
+    # b.info('bbbbbbbdaaaaab')
 
 
-# # Create logger
-# logger = logging.getLogger('TestLog')
-# # Setting logger level
-# logger.setLevel(logging.DEBUG)
-# # Create console handler and set level to debug
-# ch = logging.StreamHandler()
-# ch.setLevel(logging.DEBUG)
-# # create formatter
-# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s',)
-# # add formatter to ch
-# ch.setFormatter(formatter)
-# # add ch to logger
-# logger.addHandler(ch)
-#
-# logger.debug('tests')
